@@ -17,16 +17,34 @@ namespace apListaLigada
     private void btnLerArquivo1_Click(object sender, EventArgs e)
     {
 
+
     }
 
     private void FazerLeitura(ref ListaDupla<Aluno> qualLista)
     {
-      // instanciar a lista de palavras e dicas
-      // pedir ao usuário o nome do arquivo de entrada
-      // abrir esse arquivo e lê-lo linha a linha
-      // para cada linha, criar um objeto da classe de Palavra e Dica
-      // e inseri-0lo no final da lista duplamente ligada
-    }
+            
+
+            if (dlgAbrir.ShowDialog() == DialogResult.OK)
+            {
+                ListaDupla<Aluno> novalista = new ListaDupla<Aluno>();
+                var arquivo = new StreamReader(dlgAbrir.FileName);
+                while (!arquivo.EndOfStream)
+                {
+                    var linhaLida = arquivo.ReadLine();
+                    var novoAluno = new Aluno(linhaLida);
+                    // para cada linha, criar um objeto da classe de Palavra e Dica
+                    //lista1.InserirAposFim(novoAluno);
+                }
+                arquivo.Close();
+               // lista1.Listar(lsbUm);
+            }
+
+            // instanciar a lista de palavras e dicas
+            // pedir ao usuário o nome do arquivo de entrada
+            // abrir esse arquivo e lê-lo linha a linha
+            
+            // e inseri-0lo no final da lista duplamente ligada
+        }
 
     private void btnIncluir_Click(object sender, EventArgs e)
     {
