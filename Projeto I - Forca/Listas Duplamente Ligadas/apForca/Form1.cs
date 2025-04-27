@@ -122,7 +122,7 @@ namespace apListaLigada
 
     private void btnProximo_Click(object sender, EventArgs e)
     {
-      // Retroceder o ponteiro atual para o nó seguinte 
+       // Retroceder o ponteiro atual para o nó seguinte 
       // Exibir o Registro Atual;
     }
 

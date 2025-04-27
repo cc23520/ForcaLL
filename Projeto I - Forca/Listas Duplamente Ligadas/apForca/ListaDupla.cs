@@ -16,23 +16,38 @@ public class ListaDupla<Dado>
 
   public void PosicionarNoInicio()
   {
-    //  codificar
+        if (atual == null)
+        {
+            atual = primeiro;
+        }
   }
 
   public void PosicionarNoFinal()
   {
-    //  codificar
+        if (atual == null)
+        {
+            atual = ultimo;
+        }
+    
   }
 
   public void Avancar()
   {
-    //  codificar
+        if (atual == null)
+        {
+            atual = primeiro;
+        }
+        atual = atual.Prox;
   }
 
   public void Retroceder()
   {
-    //  codificar
-  }
+		if (atual == null)
+		{
+			atual = primeiro;
+		}
+		atual = atual.Ant;
+	}
 
   public void PosicionarEm(int indice)
   {
