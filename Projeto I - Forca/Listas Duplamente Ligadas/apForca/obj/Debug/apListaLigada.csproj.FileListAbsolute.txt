@@ -62,3 +62,13 @@ C:\Users\rjose\Desktop\github\chico\ForcaLL\Projeto I - Forca\Listas Duplamente 
 C:\Users\rjose\Desktop\github\chico\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.CoreCompileInputs.cache
 C:\Users\rjose\Desktop\github\chico\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
 C:\Users\rjose\Desktop\github\chico\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.AssemblyReference.cache
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.FrmAlunos.resources
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.Properties.Resources.resources
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.GenerateResource.cache
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.CoreCompileInputs.cache
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.exe.config
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.exe
+C:\Users\guirr\Desktop\w\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.pdb
