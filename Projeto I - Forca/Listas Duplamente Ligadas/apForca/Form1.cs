@@ -7,8 +7,8 @@ namespace apListaLigada
 {
   public partial class FrmAlunos : Form
   {
-    ListaDupla<Palavra> lista1;
-    ListaDupla<Dica> lista2;
+    ListaDupla<Forca> lista1;
+
 
 
     public FrmAlunos()
@@ -54,15 +54,10 @@ namespace apListaLigada
       // criar objeto da classe Palavra e Dica para busca
       // tentar incluir em ordem esse objeto na lista1
       // se não incluiu (já existe) avisar o usuário
-      if (lista1.Existe(new Palavra(txtRA.Text)) && lista2.Existe(new Dica(txtNome.Text)))
+      if (!lista1.Existe(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text)))) 
       {
-				lista1.InserirEmOrdem(new Palavra(txtRA.Text));
-				lista2.InserirEmOrdem(new Dica(txtNome.Text));
+                lista1.InserirEmOrdem(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text)));
 	  }
-          
-            
-              
-  
     }
 
 
@@ -73,6 +68,13 @@ namespace apListaLigada
       // se a palavra existe na lista1, posicionar o ponteiro atual nesse nó e exibir o registro atual
       // senão, avisar usuário que a palavra não existe
       // exibir o nó atual
+      if (txtRA != null)
+      {
+            if (!lista1.Existe(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text))))
+            {
+                    throw new Exception("não existe essa palavra");
+            } // tem que fazer o compare das classes
+      }
     }
 
     private void btnExcluir_Click(object sender, EventArgs e)
@@ -140,6 +142,7 @@ namespace apListaLigada
             if (lista1 != null)
             {
 				lista1.PosicionarNoInicio();
+                lista2.PosicionarNoInicio();
 			}
             
     }
@@ -151,6 +154,7 @@ namespace apListaLigada
 			if (lista1 != null)
 			{
 				lista1.Retroceder();
+				lista2.Retroceder();
 			}
 		}
 
@@ -161,6 +165,7 @@ namespace apListaLigada
 			if (lista1 != null)
 			{
 				lista1.Avancar();
+				lista2.Avancar();
 			}
 		}
 
