@@ -8,7 +8,7 @@ namespace apListaLigada
   public partial class FrmAlunos : Form
   {
     ListaDupla<Palavra> lista1;
-
+    ListaDupla<Dica> lista2;
 
 
     public FrmAlunos()
