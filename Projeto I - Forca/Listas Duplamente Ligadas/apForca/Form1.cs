@@ -7,8 +7,8 @@ namespace apListaLigada
 {
   public partial class FrmAlunos : Form
   {
-    ListaDupla<Forca> lista1;
-        ListaDupla<Forca> lista2;
+    ListaDupla<Forca> lista1 =  new ListaDupla<Forca>();
+    ListaDupla<Forca> lista2;
 
 
 
