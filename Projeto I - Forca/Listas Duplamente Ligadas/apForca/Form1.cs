@@ -7,7 +7,9 @@ namespace apListaLigada
 {
   public partial class FrmAlunos : Form
   {
-    ListaDupla<Aluno> lista1;
+    ListaDupla<Palavra> lista1;
+
+
 
     public FrmAlunos()
     {
@@ -52,6 +54,15 @@ namespace apListaLigada
       // criar objeto da classe Palavra e Dica para busca
       // tentar incluir em ordem esse objeto na lista1
       // se não incluiu (já existe) avisar o usuário
+      if (lista1.Existe(new Palavra(txtRA.Text)) && lista2.Existe(new Dica(txtNome.Text)))
+      {
+				lista1.InserirEmOrdem(new Palavra(txtRA.Text));
+				lista2.InserirEmOrdem(new Dica(txtNome.Text));
+	  }
+          
+            
+              
+  
     }
 
 
@@ -103,34 +114,66 @@ namespace apListaLigada
 
     private void FrmAlunos_Load(object sender, EventArgs e)
     {
-      // fazer a leitura do arquivo escolhido pelo usuário e armazená-lo na lista1
-      // posicionar o ponteiro atual no início da lista duplamente ligada
-      // Exibir o Registro Atual;
-    }
+			//fazer a leitura do arquivo escolhido pelo usuário e armazená-lo na lista1
+			// posicionar o ponteiro atual no início da lista duplamente ligada
+			// Exibir o Registro Atual;
+
+			// recria a lista a ser lida
+
+			if (dlgAbrir.ShowDialog() == DialogResult.OK)  // usuário pressionou botão Abrir?
+			{
+				StreamReader arquivo = new StreamReader(dlgAbrir.FileName);
+				string linha = "";
+				while (!arquivo.EndOfStream)  // enquanto não acabou o arquivo
+				{
+					linha = arquivo.ReadLine();
+
+				}
+				
+			}
+		}
 
     private void btnInicio_Click(object sender, EventArgs e)
     {
-      // posicionar o ponteiro atual no início da lista duplamente ligada
-      // Exibir o Registro Atual;
+            // posicionar o ponteiro atual no início da lista duplamente ligada
+            // Exibir o Registro Atual;
+            if (lista1 != null)
+            {
+				lista1.PosicionarNoInicio();
+			}
+            
     }
 
     private void btnAnterior_Click(object sender, EventArgs e)
     {
-      // Retroceder o ponteiro atual para o nó imediatamente anterior 
-      // Exibir o Registro Atual;
-    }
+			// Retroceder o ponteiro atual para o nó imediatamente anterior 
+			// Exibir o Registro Atual;
+			if (lista1 != null)
+			{
+				lista1.Retroceder();
+			}
+		}
 
     private void btnProximo_Click(object sender, EventArgs e)
     {
-       // Retroceder o ponteiro atual para o nó seguinte 
-      // Exibir o Registro Atual;
-    }
+			// Retroceder o ponteiro atual para o nó seguinte 
+			// Exibir o Registro Atual;
+			if (lista1 != null)
+			{
+				lista1.Avancar();
+			}
+		}
 
     private void btnFim_Click(object sender, EventArgs e)
     {
-      // posicionar o ponteiro atual no último nó da lista 
-      // Exibir o Registro Atual;
-    }
+			// posicionar o ponteiro atual no último nó da lista 
+			// Exibir o Registro Atual;
+			if (lista1 != null)
+			{
+				lista1.PosicionarNoFinal();
+			}
+
+		}
 
     private void ExibirRegistroAtual()
     {

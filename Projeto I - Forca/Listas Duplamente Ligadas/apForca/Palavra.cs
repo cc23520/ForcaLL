@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class Palavra
+public class Palavra : IComparable<Palavra>, IRegistro,
+					  ICriterioDeSeparacao<Palavra>
 { 
 
 
@@ -33,6 +34,19 @@ public class Palavra
 
     }
 
+	public bool DeveSeparar()
+	{
+		throw new NotImplementedException();
+	}
 
+	public int CompareTo(Palavra other)
+	{
+		throw new NotImplementedException();
+	}
+
+	public string FormatoDeArquivo()
+	{
+		throw new NotImplementedException();
+	}
 }
 
