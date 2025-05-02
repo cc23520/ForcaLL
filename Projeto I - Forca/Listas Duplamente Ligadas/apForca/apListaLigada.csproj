@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Aluno.cs" />
     <Compile Include="Dica.cs" />
+    <Compile Include="Forca.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
