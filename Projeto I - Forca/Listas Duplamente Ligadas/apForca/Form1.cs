@@ -8,10 +8,11 @@ namespace apListaLigada
   public partial class FrmAlunos : Form
   {
     ListaDupla<Forca> lista1;
+        ListaDupla<Forca> lista2;
 
 
 
-    public FrmAlunos()
+        public FrmAlunos()
     {
       InitializeComponent();
     }
@@ -22,13 +23,12 @@ namespace apListaLigada
 
     }
 
-    private void FazerLeitura(ref ListaDupla<Aluno> qualLista)
+    private void FazerLeitura(ref ListaDupla<Forca> qualLista)
     {
-            
-
+  
             if (dlgAbrir.ShowDialog() == DialogResult.OK)
             {
-                ListaDupla<Aluno> novalista = new ListaDupla<Aluno>();
+                ListaDupla<Forca> novalista = new ListaDupla<Forca>();
                 var arquivo = new StreamReader(dlgAbrir.FileName);
                 while (!arquivo.EndOfStream)
                 {
@@ -91,12 +91,12 @@ namespace apListaLigada
       // percorrer a lista ligada e gravar seus dados no arquivo de saída
     }
 
-    private void ExibirDados(ListaDupla<Aluno> aLista, ListBox lsb, Direcao qualDirecao)
+    private void ExibirDados(ListaDupla<Forca> aLista, ListBox lsb, Direcao qualDirecao)
     {
       lsb.Items.Clear();
       var dadosDaLista = aLista.Listagem(qualDirecao);
-      foreach (Aluno aluno in dadosDaLista)
-        lsb.Items.Add(aluno);
+      foreach (Forca forca in dadosDaLista)
+        lsb.Items.Add(forca);
     }
 
     private void tabControl1_Enter(object sender, EventArgs e)
@@ -123,16 +123,42 @@ namespace apListaLigada
 			// recria a lista a ser lida
 
 			if (dlgAbrir.ShowDialog() == DialogResult.OK)  // usuário pressionou botão Abrir?
-			{
-				StreamReader arquivo = new StreamReader(dlgAbrir.FileName);
-				string linha = "";
-				while (!arquivo.EndOfStream)  // enquanto não acabou o arquivo
-				{
-					linha = arquivo.ReadLine();
 
-				}
-				
-			}
+			{
+                ListaDupla<Forca> novalista = new ListaDupla<Forca>();
+                StreamReader arquivo = new StreamReader(dlgAbrir.FileName);
+				string linha = "";
+                while (!arquivo.EndOfStream)
+                {
+                    var linhaLida = arquivo.ReadLine();
+
+                    if (!string.IsNullOrWhiteSpace(linhaLida))
+                    {
+                        // Divide em duas partes: palavra e dica
+                        string[] partes = linhaLida.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        // Se não tiver tabulação, tenta por vários espaços
+                        if (partes.Length < 2)
+                        {
+                            partes = linhaLida.Split(new[] { "  " }, StringSplitOptions.RemoveEmptyEntries); // dois ou mais espaços
+                        }
+
+                        if (partes.Length >= 2)
+                        {
+                            string textoPalavra = partes[0].Trim();
+                            string textoDica = linhaLida.Substring(textoPalavra.Length).Trim(); // dica pode conter espaços
+
+                            var palavra = new Palavra(textoPalavra);
+                            var dica = new Dica(textoDica);
+                            var novaForca = new Forca(palavra, dica);
+
+                            novalista.InserirAposFim(novaForca);
+                            lista1.InserirAposFim(novaForca);
+                        }
+                    }
+                }
+
+            }
 		}
 
     private void btnInicio_Click(object sender, EventArgs e)
