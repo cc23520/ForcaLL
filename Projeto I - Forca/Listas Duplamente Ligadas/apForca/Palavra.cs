@@ -48,5 +48,9 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 	{
 		throw new NotImplementedException();
 	}
+	public override string ToString()
+	{
+		return textoPalavra;
+	}
 }
 

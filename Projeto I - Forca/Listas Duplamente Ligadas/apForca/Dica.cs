@@ -48,5 +48,9 @@ public class Dica   : IComparable<Dica>, IRegistro,
 	{
 		throw new NotImplementedException();
 	}
+	public override string ToString()
+	{
+		return Texto;
+	}
 }
 

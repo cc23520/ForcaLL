@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 
 public enum Direcao { paraFrente, paraTras };
 
@@ -41,11 +42,15 @@ public class ListaDupla<Dado>
 
 	public void Retroceder()
 	{
-		if (atual != null)
+		if (atual != null && atual.Ant != null)
 		{
-			atual = atual.Ant;
+			atual = atual.Ant; // Move o ponteiro para o nó anterior
 		}
-														;
+		else
+		{
+			atual = null; // Se não houver nó anterior, o ponteiro é nulo
+			MessageBox.Show("Você chegou ao início da lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+		}
 	}
 
 	public void PosicionarEm(int indice)

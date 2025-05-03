@@ -17,6 +17,9 @@ public class Forca : IComparable<Forca>, IRegistro,
 		this.dica = dica;
 	}
 
+	public Dica Dica { get => dica; set => dica = value; }
+	public Palavra Palavra { get => palavra; set => palavra = value; }
+
 	public int CompareTo(Forca other)
 	{
 		throw new NotImplementedException();
@@ -30,6 +33,11 @@ public class Forca : IComparable<Forca>, IRegistro,
 	public string FormatoDeArquivo()
 	{
 		throw new NotImplementedException();
+	}
+
+	public override string ToString()
+	{
+		return $"Palavra: {palavra.ToString()}, Dica: {dica.ToString()}";
 	}
 }
 

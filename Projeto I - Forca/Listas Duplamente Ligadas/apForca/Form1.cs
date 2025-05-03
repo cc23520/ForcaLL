@@ -8,11 +8,10 @@ namespace apListaLigada
   public partial class FrmAlunos : Form
   {
     ListaDupla<Forca> lista1 =  new ListaDupla<Forca>();
-    ListaDupla<Forca> lista2;
 
 
 
-        public FrmAlunos()
+    public FrmAlunos()
     {
       InitializeComponent();
     }
@@ -93,6 +92,7 @@ namespace apListaLigada
 
     private void ExibirDados(ListaDupla<Forca> aLista, ListBox lsb, Direcao qualDirecao)
     {
+
       lsb.Items.Clear();
       var dadosDaLista = aLista.Listagem(qualDirecao);
       foreach (Forca forca in dadosDaLista)
@@ -116,82 +116,85 @@ namespace apListaLigada
 
     private void FrmAlunos_Load(object sender, EventArgs e)
     {
-			//fazer a leitura do arquivo escolhido pelo usuário e armazená-lo na lista1
-			// posicionar o ponteiro atual no início da lista duplamente ligada
-			// Exibir o Registro Atual;
+            //fazer a leitura do arquivo escolhido pelo usuário e armazená-lo na lista1
+            // posicionar o ponteiro atual no início da lista duplamente ligada
+            // Exibir o Registro Atual;
 
-			// recria a lista a ser lida
-
-			if (dlgAbrir.ShowDialog() == DialogResult.OK)  // usuário pressionou botão Abrir?
-
+			if (dlgAbrir.ShowDialog() == DialogResult.OK)  
 			{
-                ListaDupla<Forca> novalista = new ListaDupla<Forca>();
-                StreamReader arquivo = new StreamReader(dlgAbrir.FileName);
-				string linha = "";
-                while (!arquivo.EndOfStream)
-                {
-                    var linhaLida = arquivo.ReadLine();
+				using (StreamReader arquivo = new StreamReader(dlgAbrir.FileName))
+				{
+					string linha = "";
 
-                    if (!string.IsNullOrWhiteSpace(linhaLida))
-                    {
-                        // Divide em duas partes: palavra e dica
-                        string[] partes = linhaLida.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+					while (!arquivo.EndOfStream)
+					{
+						var linhaLida = arquivo.ReadLine();
 
-                        // Se não tiver tabulação, tenta por vários espaços
-                        if (partes.Length < 2)
-                        {
-                            partes = linhaLida.Split(new[] { "  " }, StringSplitOptions.RemoveEmptyEntries); // dois ou mais espaços
-                        }
+						if (!string.IsNullOrWhiteSpace(linhaLida))
+						{
+							string textoPalavra = linhaLida.Length >= 30 ? linhaLida.Substring(0, 30).Trim() : linhaLida.Trim();
+							string textoDica = linhaLida.Length > 30 ? linhaLida.Substring(30).Trim() : ""; 
 
-                        if (partes.Length >= 2)
-                        {
-                            string textoPalavra = partes[0].Trim();
-                            string textoDica = linhaLida.Substring(textoPalavra.Length).Trim(); // dica pode conter espaços
+							var palavra = new Palavra(textoPalavra);
+							var dica = new Dica(textoDica);
+							var novaForca = new Forca(palavra, dica);
+							lista1.InserirAposFim(novaForca);
+						}
+					}
+				}
+			}
 
-                            var palavra = new Palavra(textoPalavra);
-                            var dica = new Dica(textoDica);
-                            var novaForca = new Forca(palavra, dica);
-
-                            novalista.InserirAposFim(novaForca);
-                            lista1.InserirAposFim(novaForca);
-                        }
-                    }
-                }
-
-            }
 		}
 
     private void btnInicio_Click(object sender, EventArgs e)
     {
-            // posicionar o ponteiro atual no início da lista duplamente ligada
-            // Exibir o Registro Atual;
-            if (lista1 != null)
-            {
+			// posicionar o ponteiro atual no início da lista duplamente ligada
+			// Exibir o Registro Atual;
+			if (lista1 != null)
+			{
 				lista1.PosicionarNoInicio();
-                lista2.PosicionarNoInicio();
+                txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+				txtNome.Text = lista1.Atual.Info.Dica.ToString();    
 			}
-            
-    }
+			
+
+		}
 
     private void btnAnterior_Click(object sender, EventArgs e)
     {
 			// Retroceder o ponteiro atual para o nó imediatamente anterior 
 			// Exibir o Registro Atual;
-			if (lista1 != null)
+
+			if (lista1 != null && lista1.Atual != null)
 			{
-				lista1.Retroceder();
-				lista2.Retroceder();
+				lista1.Retroceder(); // Retrocede para o nó anterior
+
+				// Verifica se o ponteiro "atual" não é nulo
+				if (lista1.Atual != null)
+				{
+					// Exibe os dados do nó atual
+					txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+					txtNome.Text = lista1.Atual.Info.Dica.ToString();
+				}
+				else
+				{
+					MessageBox.Show("Você chegou ao início da lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
 			}
 		}
 
     private void btnProximo_Click(object sender, EventArgs e)
     {
-			// Retroceder o ponteiro atual para o nó seguinte 
-			// Exibir o Registro Atual;
+            // Retroceder o ponteiro atual para o nó seguinte 
+            // Exibir o Registro Atual;
+            txtNome.Text = "";
+            txtRA.Text = "";
 			if (lista1 != null)
 			{
 				lista1.Avancar();
-				lista2.Avancar();
+				txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+				txtNome.Text = lista1.Atual.Info.Dica.ToString();
+
 			}
 		}
 
@@ -202,6 +205,8 @@ namespace apListaLigada
 			if (lista1 != null)
 			{
 				lista1.PosicionarNoFinal();
+				txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+				txtNome.Text = lista1.Atual.Info.Dica.ToString();
 			}
 
 		}
@@ -211,6 +216,12 @@ namespace apListaLigada
       // se a lista não está vazia:
       // acessar o nó atual e exibir seus campos em txtDica e txtPalavra
       // atualizar no status bar o número do registro atual / quantos nós na lista
+      if (lista1 != null)
+            {
+				txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+				txtNome.Text = lista1.Atual.Info.Dica.ToString();
+                
+			}
     }
 
     private void btnEditar_Click(object sender, EventArgs e)
@@ -227,5 +238,7 @@ namespace apListaLigada
     {
 
     }
-  }
+
+		
+	}
 }
