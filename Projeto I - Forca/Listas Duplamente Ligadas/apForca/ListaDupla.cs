@@ -156,6 +156,7 @@ public class ListaDupla<Dado>
 			primeiro = novoNo;
 		else
 			ultimo.Prox = novoNo;
+			novoNo.Ant = ultimo;
 
 		ultimo = novoNo;
 		quantosNos++;
@@ -168,7 +169,10 @@ public class ListaDupla<Dado>
 			if (EstaVazia)
 				primeiro = noExistente;
 			else
+			{
 				ultimo.Prox = noExistente;
+				noExistente.Ant = ultimo; // <<< IMPORTANTE
+			}
 
 			ultimo = noExistente;
 			noExistente.Prox = null;

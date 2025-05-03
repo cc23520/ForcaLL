@@ -187,8 +187,7 @@ namespace apListaLigada
     {
             // Retroceder o ponteiro atual para o nó seguinte 
             // Exibir o Registro Atual;
-            txtNome.Text = "";
-            txtRA.Text = "";
+            
 			if (lista1 != null)
 			{
 				lista1.Avancar();
@@ -224,10 +223,24 @@ namespace apListaLigada
 			}
     }
 
-    private void btnEditar_Click(object sender, EventArgs e)
-    {
-      // alterar a dica e guardar seu novo valor no nó exibido
-    }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // alterar a dica e guardar seu novo valor no nó exibido
+            if (lista1.Atual != null)
+            {
+                // Obtém o valor digitado no campo da dica
+                string novaDica = txtNome.Text.Trim();
+
+                if (!string.IsNullOrEmpty(novaDica))
+                {
+                    // Altera a dica do objeto Forca armazenado no nó atual
+                    lista1.Atual.Info.Dica = new Dica(novaDica);
+
+                    MessageBox.Show("Dica atualizada com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
 
     private void btnSair_Click(object sender, EventArgs e)
     {
