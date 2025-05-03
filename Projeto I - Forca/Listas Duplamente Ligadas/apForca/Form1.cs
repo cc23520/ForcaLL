@@ -47,20 +47,39 @@ namespace apListaLigada
             // e inseri-0lo no final da lista duplamente ligada
         }
 
-    private void btnIncluir_Click(object sender, EventArgs e)
-    {
-      // se o usuário digitou palavra e dica:
-      // criar objeto da classe Palavra e Dica para busca
-      // tentar incluir em ordem esse objeto na lista1
-      // se não incluiu (já existe) avisar o usuário
-      if (!lista1.Existe(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text)))) 
-      {
-                lista1.InserirEmOrdem(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text)));
-	  }
-    }
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            // Verifica se o usuário digitou a palavra e a dica
+            if (!string.IsNullOrWhiteSpace(txtRA.Text) && !string.IsNullOrWhiteSpace(txtNome.Text))
+            {
+                // Cria os objetos Palavra e Dica
+                var palavra = new Palavra(txtRA.Text.Trim());
+                var dica = new Dica(txtNome.Text.Trim());
+
+                // Cria o objeto Forca
+                var novaForca = new Forca(palavra, dica);
+
+                // Verifica se já existe na lista
+                if (!lista1.Existe(novaForca))
+                {
+                    // Insere em ordem
+                    lista1.InserirEmOrdem(novaForca);
+                    MessageBox.Show("Item incluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Essa palavra já foi cadastrada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, preencha tanto a palavra quanto a dica.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
-    private void btnBuscar_Click(object sender, EventArgs e)
+
+        private void btnBuscar_Click(object sender, EventArgs e)
     {
       // se a palavra digitada não é vazia:
       // criar um objeto da classe de Palavra e Dica para busca
@@ -90,8 +109,9 @@ namespace apListaLigada
                
                     // Altera a dica do objeto Forca armazenado no nó atual
                     lista1.Atual.Info.Dica = new Dica(" ");
+                lista1.Atual.Info.Palavra    = new Palavra(" ");
 
-                    MessageBox.Show("Dica excluida com sucesso!", "excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Dica excluida com sucesso!", "excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
 
             }

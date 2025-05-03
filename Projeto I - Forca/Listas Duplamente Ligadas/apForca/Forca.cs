@@ -20,12 +20,13 @@ public class Forca : IComparable<Forca>, IRegistro,
 	public Dica Dica { get => dica; set => dica = value; }
 	public Palavra Palavra { get => palavra; set => palavra = value; }
 
-	public int CompareTo(Forca other)
-	{
-		throw new NotImplementedException();
-	}
+    public int CompareTo(Forca other)
+    {
+        if (other == null) return 1;
+        return this.palavra.TextoPalavra.CompareTo(other.palavra.TextoPalavra);
+    }
 
-	public bool DeveSeparar()
+    public bool DeveSeparar()
 	{
 		throw new NotImplementedException();
 	}
@@ -40,4 +41,6 @@ public class Forca : IComparable<Forca>, IRegistro,
 		return $"Palavra: {palavra.ToString()}, Dica: {dica.ToString()}";
 	}
 }
+
+
 
