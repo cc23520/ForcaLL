@@ -78,11 +78,25 @@ namespace apListaLigada
 
     private void btnExcluir_Click(object sender, EventArgs e)
     {
-      // para o nó atualmente visitado e exibido na tela:
-      // perguntar ao usuário se realmente deseja excluir essa palavra e dica
-      // se sim, remover o nó atual da lista duplamente ligada e exibir o próximo nó
-      // se não, manter como está
-    }
+            // para o nó atualmente visitado e exibido na tela:
+            // perguntar ao usuário se realmente deseja excluir essa palavra e dica
+            // se sim, remover o nó atual da lista duplamente ligada e exibir o próximo nó
+            // se não, manter como está
+
+            if (lista1.Atual != null)
+            {
+                // Obtém o valor digitado no campo da di
+
+               
+                    // Altera a dica do objeto Forca armazenado no nó atual
+                    lista1.Atual.Info.Dica = new Dica(" ");
+
+                    MessageBox.Show("Dica excluida com sucesso!", "excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+
+            }
+
+        }
 
     private void FrmAlunos_FormClosing(object sender, FormClosingEventArgs e)
     {
@@ -141,7 +155,13 @@ namespace apListaLigada
 							lista1.InserirAposFim(novaForca);
 						}
 					}
-				}
+                    if (lista1 != null)
+                    {
+                        lista1.PosicionarNoInicio();
+                        txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+                        txtNome.Text = lista1.Atual.Info.Dica.ToString();
+                    }
+                }
 			}
 
 		}
