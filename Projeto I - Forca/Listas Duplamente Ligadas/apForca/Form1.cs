@@ -33,8 +33,6 @@ namespace apListaLigada
                 {
                     var linhaLida = arquivo.ReadLine();
                     var novoAluno = new Aluno(linhaLida);
-                    // para cada linha, criar um objeto da classe de Palavra e Dica
-                    //lista1.InserirAposFim(novoAluno);
                 }
                 arquivo.Close();
                // lista1.Listar(lsbUm);
@@ -49,38 +47,23 @@ namespace apListaLigada
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            // Verifica se o usuário digitou a palavra e a dica
             if (!string.IsNullOrWhiteSpace(txtRA.Text) && !string.IsNullOrWhiteSpace(txtNome.Text))
             {
-                // Cria os objetos Palavra e Dica
                 var palavra = new Palavra(txtRA.Text.Trim());
                 var dica = new Dica(txtNome.Text.Trim());
 
-                // Cria o objeto Forca
                 var novaForca = new Forca(palavra, dica);
-
-                // Verifica se já existe na lista
                 if (!lista1.Existe(novaForca))
                 {
-                    // Insere em ordem
-                    lista1.InserirEmOrdem(novaForca);
-                    MessageBox.Show("Item incluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lista1.InserirAposFim(novaForca);
                 }
-                else
-                {
-                    MessageBox.Show("Essa palavra já foi cadastrada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, preencha tanto a palavra quanto a dica.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-    {
+  private void btnBuscar_Click(object sender, EventArgs e)
+  {
       // se a palavra digitada não é vazia:
       // criar um objeto da classe de Palavra e Dica para busca
       // se a palavra existe na lista1, posicionar o ponteiro atual nesse nó e exibir o registro atual
@@ -88,12 +71,12 @@ namespace apListaLigada
       // exibir o nó atual
       if (txtRA != null)
       {
-            if (!lista1.Existe(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text))))
-            {
+                if (!lista1.Existe(new Forca(new Palavra(txtRA.Text), new Dica(txtNome.Text))))
+                {
                     throw new Exception("não existe essa palavra");
-            } // tem que fazer o compare das classes
-      }
-    }
+                }
+      } 
+  }
 
     private void btnExcluir_Click(object sender, EventArgs e)
     {
@@ -104,34 +87,47 @@ namespace apListaLigada
 
             if (lista1.Atual != null)
             {
-                // Obtém o valor digitado no campo da di
-
-               
-                    // Altera a dica do objeto Forca armazenado no nó atual
                     lista1.Atual.Info.Dica = new Dica(" ");
                 lista1.Atual.Info.Palavra    = new Palavra(" ");
 
                 MessageBox.Show("Dica excluida com sucesso!", "excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-
             }
-
         }
 
-    private void FrmAlunos_FormClosing(object sender, FormClosingEventArgs e)
-    {
-      // solicitar ao usuário que escolha o arquivo de saída
-      // percorrer a lista ligada e gravar seus dados no arquivo de saída
-    }
+		private void FrmAlunos_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (dlgSalvar.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					using (StreamWriter esc = new StreamWriter(dlgSalvar.FileName))
+					{
+						var atual = lista1.Primeiro;
+						while (atual != null)
+						{
+							string palavra = atual.Info.Palavra.ToString().PadRight(30);
+							string dica = atual.Info.Dica.ToString();
 
-    private void ExibirDados(ListaDupla<Forca> aLista, ListBox lsb, Direcao qualDirecao)
-    {
+							esc.WriteLine(palavra + dica);
+							atual = atual.Prox;
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+                    throw new Exception("erro");
+				}
+			}
+		}
 
-      lsb.Items.Clear();
-      var dadosDaLista = aLista.Listagem(qualDirecao);
-      foreach (Forca forca in dadosDaLista)
-        lsb.Items.Add(forca);
-    }
+		private void ExibirDados(ListaDupla<Forca> aLista, ListBox lsb, Direcao qualDirecao)
+        {
+
+          lsb.Items.Clear();
+          var dadosDaLista = aLista.Listagem(qualDirecao);
+          foreach (Forca forca in dadosDaLista)
+            lsb.Items.Add(forca);
+        }
 
     private void tabControl1_Enter(object sender, EventArgs e)
     {
@@ -196,8 +192,6 @@ namespace apListaLigada
                 txtRA.Text = lista1.Atual.Info.Palavra.ToString();
 				txtNome.Text = lista1.Atual.Info.Dica.ToString();    
 			}
-			
-
 		}
 
     private void btnAnterior_Click(object sender, EventArgs e)
@@ -207,19 +201,13 @@ namespace apListaLigada
 
 			if (lista1 != null && lista1.Atual != null)
 			{
-				lista1.Retroceder(); // Retrocede para o nó anterior
-
-				// Verifica se o ponteiro "atual" não é nulo
+				lista1.Retroceder(); 
 				if (lista1.Atual != null)
 				{
-					// Exibe os dados do nó atual
 					txtRA.Text = lista1.Atual.Info.Palavra.ToString();
 					txtNome.Text = lista1.Atual.Info.Dica.ToString();
 				}
-				else
-				{
-					MessageBox.Show("Você chegou ao início da lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
+
 			}
 		}
 
@@ -247,7 +235,6 @@ namespace apListaLigada
 				txtRA.Text = lista1.Atual.Info.Palavra.ToString();
 				txtNome.Text = lista1.Atual.Info.Dica.ToString();
 			}
-
 		}
 
     private void ExibirRegistroAtual()
@@ -256,27 +243,21 @@ namespace apListaLigada
       // acessar o nó atual e exibir seus campos em txtDica e txtPalavra
       // atualizar no status bar o número do registro atual / quantos nós na lista
       if (lista1 != null)
-            {
-				txtRA.Text = lista1.Atual.Info.Palavra.ToString();
-				txtNome.Text = lista1.Atual.Info.Dica.ToString();
-                
-			}
+      {
+			txtRA.Text = lista1.Atual.Info.Palavra.ToString();
+	        txtNome.Text = lista1.Atual.Info.Dica.ToString();   
+      }
     }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // alterar a dica e guardar seu novo valor no nó exibido
             if (lista1.Atual != null)
             {
-                // Obtém o valor digitado no campo da dica
                 string novaDica = txtNome.Text.Trim();
 
                 if (!string.IsNullOrEmpty(novaDica))
                 {
-                    // Altera a dica do objeto Forca armazenado no nó atual
                     lista1.Atual.Info.Dica = new Dica(novaDica);
-
-                    MessageBox.Show("Dica atualizada com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -284,14 +265,35 @@ namespace apListaLigada
 
     private void btnSair_Click(object sender, EventArgs e)
     {
-      Close();
-    }
+			if (dlgSalvar.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					using (StreamWriter esc = new StreamWriter(dlgSalvar.FileName))
+					{
+						var atual = lista1.Primeiro;
+						while (atual != null)
+						{
+							string palavra = atual.Info.Palavra.ToString().PadRight(30);
+							string dica = atual.Info.Dica.ToString();
+
+							esc.WriteLine(palavra + dica);
+							atual = atual.Prox;
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					throw new Exception("erro");
+				}
+			}
+            Close();
+		}
 
     private void btnCancelar_Click(object sender, EventArgs e)
     {
-
+            txtNome.Text = "";
+            txtRA.Text = "";
     }
-
-		
 	}
 }
