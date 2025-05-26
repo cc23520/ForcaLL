@@ -335,4 +335,11 @@ public class ListaDupla<Dado>
 		arquivo.Close();
 	}
 
+	public Dado Aleatorio()
+	{
+		throw new NotImplementedException();
+		// implementar o metodo de gerar um objeto aleatorio
+		//lista1.PosicionarEm(numeroAleatorio);
+	}
+
 }

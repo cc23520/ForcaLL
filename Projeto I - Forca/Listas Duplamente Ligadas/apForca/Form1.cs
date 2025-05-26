@@ -289,74 +289,20 @@ namespace apListaLigada
 			Close();
 		}
 
-<<<<<<< HEAD
+
 		private void btnCancelar_Click(object sender, EventArgs e)
 		{
 			txtNome.Text = "";
 			txtRA.Text = "";
 		}
+
+		private void button40_Click(object sender, EventArgs e)
+		{
+			lista1.ger
+		}
 	}
-=======
-    private void btnCancelar_Click(object sender, EventArgs e)
-    {
-            txtNome.Text = "";
-            txtRA.Text = "";
-    }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
+   
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tpForca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button40_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
->>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
+       
 }
