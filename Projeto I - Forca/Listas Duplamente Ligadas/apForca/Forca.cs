@@ -10,7 +10,7 @@ public class Forca : IComparable<Forca>, IRegistro,
 {
 	private Dica dica;
 	private Palavra palavra;
-
+	
 	public Forca(Palavra palavra,Dica dica)
 	{
 		this.palavra = palavra;
