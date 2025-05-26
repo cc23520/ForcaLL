@@ -82,6 +82,7 @@ C:\Users\rjose\Desktop\github\chico\a\ForcaLL\Projeto I - Forca\Listas Duplament
 C:\Users\rjose\Desktop\github\chico\a\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.CoreCompileInputs.cache
 C:\Users\rjose\Desktop\github\chico\a\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
 C:\Users\rjose\Desktop\github\chico\a\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb
+<<<<<<< HEAD
 C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.exe.config
 C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.exe
 C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.pdb
@@ -92,3 +93,8 @@ C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligada
 C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.CoreCompileInputs.cache
 C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
 C:\Users\u23537\Desktop\Forca\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb
+=======
+C:\Users\u23520\Desktop\AA\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.AssemblyReference.cache
+C:\Users\u23520\Desktop\AA\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
+C:\Users\u23520\Desktop\AA\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83

@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\",
   "Documents": [
     {
@@ -36,7 +37,37 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\iregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+  "WorkspaceRootPath": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\palavra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:palavra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\dica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:dica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|c:\\users\\u23520\\desktop\\aa\\forcall\\projeto i - forca\\listas duplamente ligadas\\apforca\\noduplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:noduplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\iregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
       "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:iregistro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\listadupla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2BFB39FF-63A8-4EBA-BED7-CA5A08AA9F55}|apListaLigada.csproj|solutionrelative:listadupla.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,6 +81,7 @@
           "Children": [
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Form1.cs",
@@ -148,12 +180,22 @@
               "ToolTip": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Forca.cs",
               "RelativeToolTip": "Forca.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAABAAAA",
+=======
+              "DocumentIndex": 2,
+              "Title": "Palavra.cs",
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Palavra.cs",
+              "RelativeDocumentMoniker": "Palavra.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Palavra.cs",
+              "RelativeToolTip": "Palavra.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T23:12:13.466Z",
+              "WhenOpened": "2025-04-16T15:56:10.949Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 5,
               "Title": "Dica.cs",
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Dica.cs",
@@ -161,12 +203,34 @@
               "ToolTip": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Dica.cs",
               "RelativeToolTip": "Dica.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+=======
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T13:07:56.46Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAEoBAAAAAAAAAAAtwF4BAAAAAAAA",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T15:56:18.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
               "Title": "Palavra.cs",
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Palavra.cs",
@@ -176,10 +240,22 @@
               "ViewState": "AQIAAAsAAAAAAAAAAAAuwB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T15:56:10.949Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "Dica.cs",
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Dica.cs",
+              "RelativeDocumentMoniker": "Dica.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Dica.cs",
+              "RelativeToolTip": "Dica.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T15:56:18.803Z",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
               "Title": "Aluno.cs",
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\Aluno.cs",
@@ -198,34 +274,56 @@
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\NoDuplo.cs",
               "RelativeDocumentMoniker": "NoDuplo.cs",
               "ToolTip": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\NoDuplo.cs",
+=======
+              "DocumentIndex": 4,
+              "Title": "NoDuplo.cs",
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\NoDuplo.cs",
+              "RelativeDocumentMoniker": "NoDuplo.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\NoDuplo.cs",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
               "RelativeToolTip": "NoDuplo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAXAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T13:07:56.444Z"
+              "WhenOpened": "2025-03-12T13:07:56.444Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "ListaDupla.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\ListaDupla.cs",
               "RelativeDocumentMoniker": "ListaDupla.cs",
               "ToolTip": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\ListaDupla.cs",
+=======
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\ListaDupla.cs",
+              "RelativeDocumentMoniker": "ListaDupla.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\ListaDupla.cs",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
               "RelativeToolTip": "ListaDupla.cs",
-              "ViewState": "AgIAABkBAAAAAAAAAAApwDUBAAADAAAAAAAAAA==",
+              "ViewState": "AQIAAOIAAAAAAAAAAAAQwB4BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T13:07:56.46Z"
+              "WhenOpened": "2025-03-12T13:07:56.46Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "IRegistro.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\IRegistro.cs",
               "RelativeDocumentMoniker": "IRegistro.cs",
               "ToolTip": "C:\\Users\\u23537\\Desktop\\Forca\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\IRegistro.cs",
+=======
+              "DocumentMoniker": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\IRegistro.cs",
+              "RelativeDocumentMoniker": "IRegistro.cs",
+              "ToolTip": "C:\\Users\\u23520\\Desktop\\AA\\ForcaLL\\Projeto I - Forca\\Listas Duplamente Ligadas\\apForca\\IRegistro.cs",
+>>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
               "RelativeToolTip": "IRegistro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T14:48:40.94Z"
+              "WhenOpened": "2025-03-19T14:48:40.94Z",
+              "EditorCaption": ""
             }
           ]
         }

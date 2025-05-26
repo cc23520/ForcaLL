@@ -73,6 +73,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,6 +87,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__01.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__02.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__05.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__08.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__09.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__03.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca__13.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Com Dica e Tempo perdeu.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
