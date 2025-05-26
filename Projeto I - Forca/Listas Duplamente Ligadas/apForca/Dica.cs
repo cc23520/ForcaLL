@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public class Dica    //: IComparable<Dica>, IRegistro
+public class Dica   : IComparable<Dica>, IRegistro,
+					  ICriterioDeSeparacao<Dica>
 
 {
     const int tamanhoTexto = 32767;
@@ -33,7 +34,23 @@ public class Dica    //: IComparable<Dica>, IRegistro
         
     }
 
+	public int CompareTo(Dica other)
+	{
+		throw new NotImplementedException();
+	}
 
+	public string FormatoDeArquivo()
+	{
+		throw new NotImplementedException();
+	}
 
+	public bool DeveSeparar()
+	{
+		throw new NotImplementedException();
+	}
+	public override string ToString()
+	{
+		return Texto;
+	}
 }
 
