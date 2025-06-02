@@ -62,7 +62,7 @@ public class ListaDupla<Dado>
 		//    atual aponta o primeiro nó;
 		//    percorre "indice" nós com o ponteiro atual sequencial
 		//      atualiza a variável numeroDoNoAtual
-		if (indice < quantosNos && indice >= 0)
+		if (indice >= 0 && indice <= quantosNos)
 		{
 			atual = primeiro;
 			numeroDoNoAtual = 0;

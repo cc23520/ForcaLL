@@ -6,7 +6,8 @@ namespace apListaLigada
 {
 	public partial class FrmAlunos : Form
 	{
-		ListaDupla<Forca> lista1 = new ListaDupla<Forca>();
+        string vare = "";
+        ListaDupla<Forca> lista1 = new ListaDupla<Forca>();
 
 
 
@@ -176,7 +177,6 @@ namespace apListaLigada
 						lista1.PosicionarNoInicio();
 						txtRA.Text = lista1.Atual.Info.Palavra.ToString();
 						txtNome.Text = lista1.Atual.Info.Dica.ToString();
-						slRegistro.Text = lista1.QuantosNos.ToString();
 					}
 				}
 			}
@@ -301,16 +301,19 @@ namespace apListaLigada
 		private void button40_Click(object sender, EventArgs e)
 		{
 			Random rng = new Random();
-			int numeroSorteado = rng.Next(1,lista1.QuantosNos);
+			int numeroSorteado = rng.Next();
+
 			lista1.PosicionarEm(numeroSorteado);
-			char[] a = lista1.Atual.Info.Palavra.separarPalavraSemEspacos();
+
+			char[] a = lista1.Atual.Info.Palavra.separarPalavra();
 			Console.WriteLine(a);
 			for (int i = 0; i < a.Length; i++)
 			{
+				
 				DataGridViewTextBoxColumn coluna = new DataGridViewTextBoxColumn();
+				coluna.Name = "Coluna" + i.ToString();
 				coluna.HeaderText = a[i].ToString();
 				dataGridView1.Columns.Add(coluna);
-			
 			}
 		}
 
@@ -318,18 +321,16 @@ namespace apListaLigada
         {
 
         }
-		
 
-		private void button39_Click(object sender, EventArgs e)
-		{
-			string plv = " ";
-			Button btn = sender as Button;
-			if (btn != null)
-			{
-				plv += btn.Text;
-			}
-		}
-	}
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+			 string dc = lista1.Atual.Info.Dica.Texto;
+			if (checkBox1.Checked == true){
+				label6.Text =label6.Text + dc;
+
+            }
+        }
+    }
 
    
 

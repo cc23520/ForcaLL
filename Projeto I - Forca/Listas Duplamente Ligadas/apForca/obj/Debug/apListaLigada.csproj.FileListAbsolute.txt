@@ -98,3 +98,13 @@ C:\Users\u23520\Desktop\AA\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\a
 C:\Users\u23520\Desktop\AA\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
 C:\Users\u23520\Desktop\AA\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb
 >>>>>>> 9ca5dbf2e4dca0d2118eafe9891e26d39a70eb83
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.exe.config
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.exe
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\bin\Debug\apListaLigada.pdb
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.AssemblyReference.cache
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.FrmAlunos.resources
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.Properties.Resources.resources
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.GenerateResource.cache
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.csproj.CoreCompileInputs.cache
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.exe
+C:\Users\u23520\Desktop\projeto\ForcaLL\Projeto I - Forca\Listas Duplamente Ligadas\apForca\obj\Debug\apListaLigada.pdb

@@ -12,8 +12,7 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 
     const int tamanhoPalavra = 30;
     string textoPalavra;
-
-	bool[] acertou;
+	bool[] acertou = new bool[tamanhoPalavra];
 
 
 
@@ -40,15 +39,8 @@ public class Palavra : IComparable<Palavra>, IRegistro,
     }
 	public Char[] separarPalavra()
 	{
-		acertou = new bool[textoPalavra.TrimEnd(' ').Length]; 
 		int contadorDeTrue = 0;
-		char[] letras = textoPalavra.Trim(' ').ToCharArray();
-		return letras;
-	}
-
-	public Char[] separarPalavraSemEspacos()
-	{
-		char[] letras = textoPalavra.TrimEnd(' ').ToCharArray();
+		char[] letras = textoPalavra.ToCharArray();
 		return letras;
 	}
 	public bool DeveSeparar()

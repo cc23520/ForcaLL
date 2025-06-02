@@ -26,6 +26,8 @@ public class Forca : IComparable<Forca>, IRegistro,
         return this.palavra.TextoPalavra.CompareTo(other.palavra.TextoPalavra);
     }
 
+	 
+
     public bool DeveSeparar()
 	{
 		throw new NotImplementedException();
