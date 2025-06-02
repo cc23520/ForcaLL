@@ -112,5 +112,29 @@
   <ItemGroup>
     <None Include="Resources\Com Dica e Tempo perdeu.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_05.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_09.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_08.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_10.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_07.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_14.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_17.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forca_16.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

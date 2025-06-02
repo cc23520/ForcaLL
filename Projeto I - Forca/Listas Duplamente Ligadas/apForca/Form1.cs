@@ -298,9 +298,14 @@ namespace apListaLigada
 
 		private void button40_Click(object sender, EventArgs e)
 		{
-			lista1.ger
+			
 		}
-	}
+
+        private void txtRA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 
    
 
