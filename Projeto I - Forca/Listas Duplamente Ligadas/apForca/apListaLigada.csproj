@@ -131,7 +131,7 @@
     <None Include="Resources\Forca_14.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Forca_17.gif" />
+    <Content Include="Resources\Forca_17.gif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Forca_16.gif" />

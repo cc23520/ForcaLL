@@ -37,24 +37,11 @@ public class Palavra : IComparable<Palavra>, IRegistro,
         TextoPalavra = textoPalavra;
 
     }
-	public bool separarPalavra(char letra)
+	public Char[] separarPalavra()
 	{
 		int contadorDeTrue = 0;
 		char[] letras = textoPalavra.ToCharArray();
-		for ( int i = 0; i <tamanhoPalavra; i++)
-		{
-			if (letras[i] == letra)
-			{
-				acertou[i] = true;
-				contadorDeTrue++;
-			}
-		}
-
-		if (contadorDeTrue > 0)
-		{
-			return true;
-		}
-		return false;
+		return letras;
 	}
 	public bool DeveSeparar()
 	{

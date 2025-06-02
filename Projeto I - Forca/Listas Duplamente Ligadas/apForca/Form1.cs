@@ -13,6 +13,7 @@ namespace apListaLigada
 		public FrmAlunos()
 		{
 			InitializeComponent();
+			
 		}
 
 		private void btnLerArquivo1_Click(object sender, EventArgs e)
@@ -298,7 +299,19 @@ namespace apListaLigada
 
 		private void button40_Click(object sender, EventArgs e)
 		{
-			
+			Random rng = new Random();
+			int numeroSorteado = rng.Next();
+			lista1.PosicionarEm(numeroSorteado);
+			char[] a = lista1.Atual.Info.Palavra.separarPalavra();
+			Console.WriteLine(a);
+			for (int i = 0; i < a.Length; i++)
+			{
+				
+				DataGridViewTextBoxColumn coluna = new DataGridViewTextBoxColumn();
+				coluna.Name = "Coluna" + i.ToString();
+				coluna.HeaderText = a[i].ToString();
+				dataGridView1.Columns.Add(coluna);
+			}
 		}
 
         private void txtRA_TextChanged(object sender, EventArgs e)
