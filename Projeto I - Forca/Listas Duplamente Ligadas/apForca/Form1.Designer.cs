@@ -364,10 +364,10 @@
 			// 
 			this.tpListagem.Controls.Add(this.groupBox1);
 			this.tpListagem.Controls.Add(this.lsbDados);
-			this.tpListagem.Location = new System.Drawing.Point(4, 22);
+			this.tpListagem.Location = new System.Drawing.Point(4, 26);
 			this.tpListagem.Name = "tpListagem";
 			this.tpListagem.Padding = new System.Windows.Forms.Padding(3);
-			this.tpListagem.Size = new System.Drawing.Size(950, 503);
+			this.tpListagem.Size = new System.Drawing.Size(950, 499);
 			this.tpListagem.TabIndex = 1;
 			this.tpListagem.Text = "Listagem";
 			this.tpListagem.UseVisualStyleBackColor = true;
@@ -602,6 +602,7 @@
 			this.checkBox1.TabIndex = 56;
 			this.checkBox1.Text = "Com dica";
 			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
 			// 
 			// label8
 			// 

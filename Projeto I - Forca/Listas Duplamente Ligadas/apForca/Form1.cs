@@ -329,6 +329,19 @@ namespace apListaLigada
 				plv += btn.Text;
 			}
 		}
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			string a = label6.Text;
+			if (checkBox1.Checked)
+			{
+				label6.Text = "dica:" + " " + lista1.Atual.Info.Dica.ToString();
+			}
+			else 
+			{
+				label6.Text = a;
+			}
+		}
 	}
 
    
