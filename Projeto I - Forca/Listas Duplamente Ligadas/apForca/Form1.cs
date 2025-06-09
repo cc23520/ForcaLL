@@ -300,7 +300,8 @@ namespace apListaLigada
 
 		private void button40_Click(object sender, EventArgs e)
 		{
-			Random rng = new Random();
+            dataGridView1.Columns.Clear();
+            Random rng = new Random();
 			int numeroSorteado = rng.Next(1,lista1.QuantosNos);
 			lista1.PosicionarEm(numeroSorteado);
 			char[] a = lista1.Atual.Info.Palavra.separarPalavraSemEspacos();
