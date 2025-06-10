@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlunos));
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtRA = new System.Windows.Forms.TextBox();
 			this.txtNome = new System.Windows.Forms.TextBox();
@@ -364,10 +365,10 @@
 			// 
 			this.tpListagem.Controls.Add(this.groupBox1);
 			this.tpListagem.Controls.Add(this.lsbDados);
-			this.tpListagem.Location = new System.Drawing.Point(4, 26);
+			this.tpListagem.Location = new System.Drawing.Point(4, 22);
 			this.tpListagem.Name = "tpListagem";
 			this.tpListagem.Padding = new System.Windows.Forms.Padding(3);
-			this.tpListagem.Size = new System.Drawing.Size(950, 499);
+			this.tpListagem.Size = new System.Drawing.Size(950, 503);
 			this.tpListagem.TabIndex = 1;
 			this.tpListagem.Text = "Listagem";
 			this.tpListagem.UseVisualStyleBackColor = true;
@@ -575,7 +576,7 @@
 			// button40
 			// 
 			this.button40.BackColor = System.Drawing.Color.Silver;
-			this.button40.Location = new System.Drawing.Point(605, 368);
+			this.button40.Location = new System.Drawing.Point(596, 394);
 			this.button40.Name = "button40";
 			this.button40.Size = new System.Drawing.Size(75, 29);
 			this.button40.TabIndex = 58;
@@ -587,7 +588,7 @@
 			// 
 			this.label9.AutoSize = true;
 			this.label9.ForeColor = System.Drawing.Color.Red;
-			this.label9.Location = new System.Drawing.Point(602, 337);
+			this.label9.Location = new System.Drawing.Point(593, 363);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(153, 17);
 			this.label9.TabIndex = 57;
@@ -596,7 +597,7 @@
 			// checkBox1
 			// 
 			this.checkBox1.AutoSize = true;
-			this.checkBox1.Location = new System.Drawing.Point(605, 301);
+			this.checkBox1.Location = new System.Drawing.Point(596, 327);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(90, 21);
 			this.checkBox1.TabIndex = 56;
@@ -608,7 +609,7 @@
 			// 
 			this.label8.AutoSize = true;
 			this.label8.ForeColor = System.Drawing.Color.Red;
-			this.label8.Location = new System.Drawing.Point(385, 374);
+			this.label8.Location = new System.Drawing.Point(376, 400);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(96, 17);
 			this.label8.TabIndex = 55;
@@ -618,7 +619,7 @@
 			// 
 			this.label7.AutoSize = true;
 			this.label7.ForeColor = System.Drawing.Color.Green;
-			this.label7.Location = new System.Drawing.Point(385, 337);
+			this.label7.Location = new System.Drawing.Point(376, 363);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(106, 17);
 			this.label7.TabIndex = 54;
@@ -628,7 +629,7 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.ForeColor = System.Drawing.Color.Purple;
-			this.label6.Location = new System.Drawing.Point(385, 299);
+			this.label6.Location = new System.Drawing.Point(376, 325);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(202, 17);
 			this.label6.TabIndex = 53;
@@ -636,10 +637,23 @@
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToOrderColumns = true;
+			this.dataGridView1.AllowUserToResizeColumns = false;
+			this.dataGridView1.AllowUserToResizeRows = false;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.ColumnHeadersVisible = false;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridView1.Location = new System.Drawing.Point(286, 263);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(658, 32);
+			this.dataGridView1.RowHeadersVisible = false;
+			this.dataGridView1.Size = new System.Drawing.Size(658, 38);
 			this.dataGridView1.TabIndex = 52;
 			// 
 			// button39

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace apListaLigada
@@ -298,44 +299,109 @@ namespace apListaLigada
 			txtRA.Text = "";
 		}
 
+		private char[] palavraSorteada;
+		private int erros = 0;
+
 		private void button40_Click(object sender, EventArgs e)
 		{
+			dataGridView1.Columns.Clear();
+			dataGridView1.Rows.Clear();
+
 			Random rng = new Random();
-			int numeroSorteado = rng.Next(1,lista1.QuantosNos);
+			int numeroSorteado = rng.Next(1, lista1.QuantosNos);
 			lista1.PosicionarEm(numeroSorteado);
-			char[] a = lista1.Atual.Info.Palavra.separarPalavraSemEspacos();
-			Console.WriteLine(a);
-			for (int i = 0; i < a.Length; i++)
+
+			Palavra palavraObj = lista1.Atual.Info.Palavra;
+			char[] letras = palavraObj.separarPalavraSemEspacos();
+			palavraObj.Acertou = new bool[letras.Length]; // só por garantia
+
+			erros = 0;
+			label8.Text = "Erros: 0";
+
+			for (int i = 0; i < letras.Length; i++)
 			{
-				DataGridViewTextBoxColumn coluna = new DataGridViewTextBoxColumn();
-				coluna.HeaderText = a[i].ToString();
+				var coluna = new DataGridViewTextBoxColumn
+				{
+					HeaderText = " ",
+					Width = 30
+				};
 				dataGridView1.Columns.Add(coluna);
-			
+			}
+
+			dataGridView1.Rows.Add();
+			for (int i = 0; i < letras.Length; i++)
+			{
+				dataGridView1.Rows[0].Cells[i].Value = ""; 
 			}
 		}
 
-        private void txtRA_TextChanged(object sender, EventArgs e)
+
+		private void txtRA_TextChanged(object sender, EventArgs e)
         {
 
         }
-		
+
 
 		private void button39_Click(object sender, EventArgs e)
 		{
-			string plv = " ";
 			Button btn = sender as Button;
-			if (btn != null)
+			if (btn == null)
+				return;
+
+			string letra = btn.Text.ToUpper();
+			bool acertouLetra = false;
+
+			Palavra palavraObj = lista1.Atual.Info.Palavra;
+			char[] letras = palavraObj.separarPalavraSemEspacos(); 
+
+			for (int i = 0; i < letras.Length; i++)
 			{
-				plv += btn.Text;
+				if (letras[i].ToString().ToUpper() == letra && !palavraObj.Acertou[i])
+				{
+					dataGridView1.Rows[0].Cells[i].Value = letra;
+					MessageBox.Show($"Letra {letra} colocada na posição {i}");
+					palavraObj.Acertou[i] = true;
+					acertouLetra = true;
+				}
+			}
+
+			if (!acertouLetra)
+			{
+				erros++;
+				label8.Text = "Erros: " + erros;
+				if (erros >= 4)
+				{
+					MessageBox.Show("Você perdeu!");
+					DesativarBotoesLetras();
+				}
+			}
+			else if (palavraObj.Acertou.All(x => x))
+			{
+				MessageBox.Show("Parabéns, você venceu!");
+				DesativarBotoesLetras();
+			}
+
+			btn.Enabled = false;
+		}
+
+
+		private void DesativarBotoesLetras()
+		{
+			foreach (Control ctrl in this.Controls)
+			{
+				if (ctrl is Button b && b.Name.StartsWith("buttonLetra")) 
+					b.Enabled = false;
 			}
 		}
+
+
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
 			string a = label6.Text;
 			if (checkBox1.Checked)
 			{
-				label6.Text = "dica:" + " " + lista1.Atual.Info.Dica.ToString();
+				label6.Text = "dica:" + " " + lista1.Atual.Info.Dica.Texto;
 			}
 			else 
 			{

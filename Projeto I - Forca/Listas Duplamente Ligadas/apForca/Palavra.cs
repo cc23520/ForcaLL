@@ -48,9 +48,12 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 
 	public Char[] separarPalavraSemEspacos()
 	{
-		char[] letras = textoPalavra.TrimEnd(' ').ToCharArray();
+		string textoSemEspaco = textoPalavra.TrimEnd(' ');
+		acertou = new bool[textoSemEspaco.Length];
+		char[] letras = textoSemEspaco.ToCharArray();
 		return letras;
 	}
+
 	public bool DeveSeparar()
 	{
 		throw new NotImplementedException();
