@@ -33,26 +33,45 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 	public bool[] Acertou { get => acertou; set => acertou = value; }
 
 	public Palavra(string textoPalavra)
-    {
-
-        TextoPalavra = textoPalavra;
-
-    }
-	public Char[] separarPalavra()
 	{
-		acertou = new bool[textoPalavra.TrimEnd(' ').Length]; 
-		int contadorDeTrue = 0;
-		char[] letras = textoPalavra.Trim(' ').ToCharArray();
-		return letras;
+		TextoPalavra = textoPalavra;
+
+		acertou = new bool[TextoPalavra.Length];
+		for (int i = 0; i < TextoPalavra.Length; i++)
+		{
+			if (TextoPalavra[i] == ' ')
+				acertou[i] = true; 
+			else
+				acertou[i] = false;
+		}
 	}
+
+
+	public char[] separarPalavra()
+	{
+		string textoLimpo = textoPalavra.TrimEnd(' ');
+		acertou = new bool[textoLimpo.Length];
+
+		for (int i = 0; i < textoLimpo.Length; i++)
+		{
+			acertou[i] = textoLimpo[i] == ' ';
+		}
+
+		return textoLimpo.ToCharArray();
+	}
+
 
 	public Char[] separarPalavraSemEspacos()
 	{
-		string textoSemEspaco = textoPalavra.TrimEnd(' ');
-		acertou = new bool[textoSemEspaco.Length];
-		char[] letras = textoSemEspaco.ToCharArray();
-		return letras;
+		string textoSemEspaco = textoPalavra.Replace(" ", "").TrimEnd();
+		return textoSemEspaco.ToCharArray();
 	}
+
+	public char[] separarPalavraComEspacos()
+	{
+		return TextoPalavra.ToCharArray();
+	}
+
 
 	public bool DeveSeparar()
 	{
@@ -71,6 +90,20 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 	public override string ToString()
 	{
 		return textoPalavra;
+	}
+
+	public void InicializarAcertou()
+	{
+		string textoLimpo = textoPalavra.TrimEnd(' ');
+		acertou = new bool[textoLimpo.Length];
+		for (int i = 0; i < textoLimpo.Length; i++)
+			acertou[i] = textoLimpo[i] == ' '; // espaços já "acertados"
+	}
+
+	// Método para retornar o array de letras SEM modificar o Acertou
+	public char[] GetLetras()
+	{
+		return textoPalavra.TrimEnd(' ').ToCharArray();
 	}
 }
 

@@ -312,8 +312,9 @@ namespace apListaLigada
 			lista1.PosicionarEm(numeroSorteado);
 
 			Palavra palavraObj = lista1.Atual.Info.Palavra;
-			char[] letras = palavraObj.separarPalavraSemEspacos();
-			palavraObj.Acertou = new bool[letras.Length]; // só por garantia
+			palavraObj.InicializarAcertou();
+			char[] letras = palavraObj.GetLetras();
+
 
 			erros = 0;
 			label8.Text = "Erros: 0";
@@ -329,11 +330,14 @@ namespace apListaLigada
 			}
 
 			dataGridView1.Rows.Add();
+
 			for (int i = 0; i < letras.Length; i++)
 			{
-				dataGridView1.Rows[0].Cells[i].Value = ""; 
+
+				dataGridView1.Rows[0].Cells[i].Value = letras[i] == ' ' ? " " : "";
 			}
 		}
+
 
 
 		private void txtRA_TextChanged(object sender, EventArgs e)
@@ -342,77 +346,49 @@ namespace apListaLigada
         }
 
 
-        private void button39_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn == null)
-                return;
+		private void button39_Click(object sender, EventArgs e)
+		{
+			Button btn = sender as Button;
+			if (btn == null) return;
 
-            string letra = btn.Text.ToUpper();
-            bool acertouLetra = false;
+			string letra = btn.Text.ToUpper();
+			bool acertouLetra = false;
 
-            Palavra palavraObj = lista1.Atual.Info.Palavra;
-            char[] letras = palavraObj.separarPalavraSemEspacos();
+			Palavra palavraObj = lista1.Atual.Info.Palavra;
+			char[] letras = palavraObj.GetLetras();
 
-            for (int i = 0; i < letras.Length; i++)
-            {
-                if (letras[i].ToString().ToUpper() == letra && !palavraObj.Acertou[i])
-                {
-                    dataGridView1.Rows[0].Cells[i].Value = letra;
-                    MessageBox.Show($"Letra {letra} colocada na posição {i}");
-                    palavraObj.Acertou[i] = true;
-                    acertouLetra = true;
-                }
-            }
+			for (int i = 0; i < letras.Length; i++)
+			{
+				if (letras[i].ToString().ToUpper() == letra && !palavraObj.Acertou[i])
+				{
+					dataGridView1.Rows[0].Cells[i].Value = letra;
+					palavraObj.Acertou[i] = true;
+					acertouLetra = true;
+				}
+			}
 
-            if (!acertouLetra)
-            {
-                erros++;
-                label8.Text = "Erros: " + erros;
+			if (!acertouLetra)
+			{
+				erros++;
+				label8.Text = "Erros: " + erros;
 
-                // Mostrar parte do corpo correspondente ao erro
-                switch (erros)
-                {
-                    case 1:
-                        pictureBoxCabeca.Visible = true;
-                        break;
-                    case 2:
-                        pictureBoxPescoco.Visible = true;
-                        break;
-                    case 3:
-                        pictureBoxBarriga.Visible = true;
-                        break;
-                    case 4:
-                        pictureBoxBracoEsquerdo.Visible = true;
-                        break;
-                    case 5:
-                        pictureBoxBracoDireito.Visible = true;
-                        break;
-                    case 6:
-                        pictureBoxShorts.Visible = true;
-                        break;
-                    case 7:
-                        pictureBoxPernaEsquerda.Visible = true;
-                        break;
-                    case 8:
-                        pictureBoxPernaDireita.Visible = true;
-                        MessageBox.Show("Você perdeu!");
-                        DesativarBotoesLetras();
-                        break;
-                }
-            }
-            else if (palavraObj.Acertou.All(x => x))
-            {
-                MessageBox.Show("Parabéns, você venceu!");
-                DesativarBotoesLetras();
-            }
+				// Exibir partes do boneco e mensagens de perda...
+			}
+			else if (palavraObj.Acertou.All(x => x))
+			{
+				MessageBox.Show("Parabéns, você venceu!");
+				DesativarBotoesLetras();
+			}
 
-            btn.Enabled = false;
-        }
+			btn.Enabled = false;
+		}
+ 
 
 
 
-        private void DesativarBotoesLetras()
+
+
+		private void DesativarBotoesLetras()
 		{
 			foreach (Control ctrl in this.Controls)
 			{
