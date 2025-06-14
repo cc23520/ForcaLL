@@ -299,23 +299,23 @@ namespace apListaLigada
 			txtRA.Text = "";
 		}
 
-		private char[] palavraSorteada;
 		private int erros = 0;
-
+		private int acertos = 0;
 		private void button40_Click(object sender, EventArgs e)
 		{
 			dataGridView1.Columns.Clear();
 			dataGridView1.Rows.Clear();
 
+			acertos = 0;
+
+			label7.Text = "acertos: " + acertos;
+			EsconderImagens();
 			Random rng = new Random();
 			int numeroSorteado = rng.Next(1, lista1.QuantosNos);
 			lista1.PosicionarEm(numeroSorteado);
-
 			Palavra palavraObj = lista1.Atual.Info.Palavra;
-			palavraObj.InicializarAcertou();
+			palavraObj.IniciaAcertos();
 			char[] letras = palavraObj.GetLetras();
-
-
 			erros = 0;
 			label8.Text = "Erros: 0";
 
@@ -338,8 +338,6 @@ namespace apListaLigada
 			}
 		}
 
-
-
 		private void txtRA_TextChanged(object sender, EventArgs e)
         {
 
@@ -350,10 +348,8 @@ namespace apListaLigada
 		{
 			Button btn = sender as Button;
 			if (btn == null) return;
-
 			string letra = btn.Text.ToUpper();
 			bool acertouLetra = false;
-
 			Palavra palavraObj = lista1.Atual.Info.Palavra;
 			char[] letras = palavraObj.GetLetras();
 
@@ -364,28 +360,55 @@ namespace apListaLigada
 					dataGridView1.Rows[0].Cells[i].Value = letra;
 					palavraObj.Acertou[i] = true;
 					acertouLetra = true;
+					acertos++;
+					label7.Text = "acertos: " + acertos;
+
 				}
 			}
 
 			if (!acertouLetra)
 			{
 				erros++;
-				label8.Text = "Erros: " + erros;
+				label8.Text = "erros: " + erros;
+				switch (erros)
+				{
 
-				// Exibir partes do boneco e mensagens de perda...
-			}
+					case 1:
+						pictureBoxCabeca.Visible = true;
+						break;
+					case 2:
+						pictureBoxPescoco.Visible = true;
+						break;
+					case 3:
+						pictureBoxBarriga.Visible = true;
+						break;
+					case 4:
+						pictureBoxBracoEsquerdo.Visible = true;
+						break;
+					case 5:
+						pictureBoxBracoDireito.Visible = true;
+						break;
+					case 6:
+						pictureBoxShorts.Visible = true;
+						break;
+					case 7:
+						pictureBoxPernaEsquerda.Visible = true;
+						break;
+					case 8:
+						pictureBoxPernaDireita.Visible = true;
+						MessageBox.Show("Você perdeu!");
+						DesativarBotoesLetras();
+						break;
+					}
+				}
 			else if (palavraObj.Acertou.All(x => x))
 			{
-				MessageBox.Show("Parabéns, você venceu!");
+				MessageBox.Show("voce venceu");
 				DesativarBotoesLetras();
 			}
 
 			btn.Enabled = false;
 		}
- 
-
-
-
 
 
 		private void DesativarBotoesLetras()
@@ -396,21 +419,34 @@ namespace apListaLigada
 					b.Enabled = false;
 			}
 		}
-
-
-
+	
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
-			string a = label6.Text;
+			string textoDica = label6.Text;
 			if (checkBox1.Checked)
 			{
+
 				label6.Text = "dica:" + " " + lista1.Atual.Info.Dica.Texto;
 			}
 			else 
 			{
-				label6.Text = a;
+				label6.Text = textoDica;
 			}
 		}
+
+		private void EsconderImagens()
+		{
+			pictureBoxCabeca.Visible = false;
+			pictureBoxPescoco.Visible = false;
+			pictureBoxBarriga.Visible = false;
+			pictureBoxBracoEsquerdo.Visible = false;
+			pictureBoxBracoDireito.Visible = false;
+			pictureBoxShorts.Visible = false;
+			pictureBoxPernaEsquerda.Visible = false;
+			pictureBoxPernaDireita.Visible = false;
+		}
+
+		
 	}
 
    

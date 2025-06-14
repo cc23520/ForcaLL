@@ -37,7 +37,7 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 		TextoPalavra = textoPalavra;
 
 		acertou = new bool[TextoPalavra.Length];
-		for (int i = 0; i < TextoPalavra.Length; i++)
+		for (int i = 0; i < TextoPalavra.Length; i++) 
 		{
 			if (TextoPalavra[i] == ' ')
 				acertou[i] = true; 
@@ -49,30 +49,16 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 
 	public char[] separarPalavra()
 	{
-		string textoLimpo = textoPalavra.TrimEnd(' ');
-		acertou = new bool[textoLimpo.Length];
+		string txtL = textoPalavra.TrimEnd(' ');
+		acertou = new bool[txtL.Length];
 
-		for (int i = 0; i < textoLimpo.Length; i++)
+		for (int i = 0; i < txtL.Length; i++)
 		{
-			acertou[i] = textoLimpo[i] == ' ';
+			acertou[i] = txtL[i] == ' ';
 		}
 
-		return textoLimpo.ToCharArray();
+		return txtL.ToCharArray();
 	}
-
-
-	public Char[] separarPalavraSemEspacos()
-	{
-		string textoSemEspaco = textoPalavra.Replace(" ", "").TrimEnd();
-		return textoSemEspaco.ToCharArray();
-	}
-
-	public char[] separarPalavraComEspacos()
-	{
-		return TextoPalavra.ToCharArray();
-	}
-
-
 	public bool DeveSeparar()
 	{
 		throw new NotImplementedException();
@@ -92,15 +78,14 @@ public class Palavra : IComparable<Palavra>, IRegistro,
 		return textoPalavra;
 	}
 
-	public void InicializarAcertou()
+	public void IniciaAcertos()
 	{
-		string textoLimpo = textoPalavra.TrimEnd(' ');
-		acertou = new bool[textoLimpo.Length];
-		for (int i = 0; i < textoLimpo.Length; i++)
-			acertou[i] = textoLimpo[i] == ' '; // espaços já "acertados"
+		string txtL = textoPalavra.TrimEnd(' ');
+		acertou = new bool[txtL.Length];
+		for (int i = 0; i < txtL.Length; i++)
+			acertou[i] = txtL[i] == ' ';
 	}
 
-	// Método para retornar o array de letras SEM modificar o Acertou
 	public char[] GetLetras()
 	{
 		return textoPalavra.TrimEnd(' ').ToCharArray();
